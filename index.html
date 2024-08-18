@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tune Hub</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+    <link rel="icon" href="music.jpeg">
+</head>
+<body>
+    <header>
+        <h1>Tune Hub</h1>
+        <div class="search-container">
+            <form action="/search" method="get">
+                <input type="text" placeholder="Search for music..." name="query" id="search-input">
+                <button type="submit"><i class="fa fa-search"></i></button>
+            </form>
+        </div>
+        <a href="#contact" class="contact-icon">
+            <img src="images/ac2.jpeg" width="50" height="50" alt="Profile">
+            <p>Lavanya</p>
+        </a>
+        <div id="user-details" class="user-details">
+            <p>Name: Lavanya Baskaran</p><br>
+            <p>Email: lavanya@example.com</p><br>
+            <p>Phone: 123-456-7890</p><br>
+            <p>Address: 123 Music Lane, Tune City, TC 12345</p><br>
+            <p>Occupation: Student</p><br>
+            <p>Interests: Music, Web Design, Traveling</p><br>
+            <p>Member Since: January 2022</p><br>
+        </div>
+        <style>
+            .contact-icon img {
+                width: 100px; 
+                height: 100px; 
+                border-radius: 60%; 
+                object-fit: cover; 
+                cursor: pointer;
+            }
+            .contact-icon p {
+                text-align: center; 
+                font-size: 16px; 
+            }
+            .user-details {
+                display: none;
+                border: 1px solid #0b0909;
+                padding: 20px; 
+                background-color: #050404;
+                position: fixed;
+                top: 60px; 
+                right: 20px; 
+                width: 300px; 
+                height: 600px; 
+                box-shadow: 0 0 20px;
+                z-index: 1000; 
+                color: white; 
+            }
+            .user-details p {
+                margin: 10px 0; 
+                font-size: 14px; 
+            }
+    
+            /* Search bar styles */
+            .search-container {
+                position: absolute;
+                top: 20px; /* Adjust as needed */
+                left: 50%;
+                transform: translateX(-50%);
+                width: 50%;
+            }
+            .search-container form {
+                display: flex;
+                justify-content: center;
+            }
+            .search-container input[type="text"] {
+                width: 100%;
+                padding: 10px;
+                border: 1px solid #ccc;
+                border-radius: 4px 0 0 4px;
+                outline: none;
+                font-size: 16px;
+                background-color: #222; /* Cache design style */
+                color: white;
+            }
+            .search-container button {
+                padding: 10px;
+                background-color: #ff6600;
+                border: none;
+                border-radius: 0 4px 4px 0;
+                cursor: pointer;
+            }
+            .search-container button i {
+                color: #fff;
+                font-size: 16px;
+            }
+            .search-container button:hover {
+                background-color: #e65c00;
+            }
+    
+            /* Ensure the header's content remains properly aligned */
+            header {
+                position: relative;
+            }
+    
+        </style>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="sign up.html">Sign Up</a></li>
+            <li><a href="login.html">Login</a></li>
+            <li><a href="registration.html">Subscription</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+    <section id="home">
+        <h2>Popular now</h2>
+        <ul class="image-list">
+            <li class="image-item" draggable="true">
+                <img src="images/p1.jpeg"  width="108" height="108" alt="img-1" />  
+            </li>
+            <li class="image-item" draggable="true">
+                <img src="images/p2.jpeg" width="108" height="108"  alt="img-2" />
+            </li>   
+           
+            <li class="image-item" draggable="true">
+                <img src="images/p3.jpeg" width="108" height="108"  alt="img-3" />
+             </li>   
+            <li class="image-item" draggable="true">
+                <img src="images/p19.jpeg" width="108" height="108"  alt="img-4" />
+             </li>   
+          
+            <li class="image-item" draggable="true">
+                <img src="images/p5.jpeg" width="108" height="108"  alt="img-5" />
+                </li>
+                <li class="image-item" draggable="true">
+                    <img src="images/p6.jpeg" width="108" height="108"  alt="img-1" />  
+                </li>
+                <li class="image-item" draggable="true">
+                    <img src="images/p7.jpeg" width="108" height="108"  alt="img-2" />
+                </li>   
+               
+                <li class="image-item" draggable="true">
+                    <img src="images/p8.jpeg" width="108" height="108"  alt="img-3" />
+                 </li>   
+                <li class="image-item" draggable="true">
+                    <img src="images/p9.jpeg" width="108" height="108"  alt="img-4" />
+                 </li>   
+              
+                <li class="image-item" draggable="true">
+                    <img src="images/p10.jpeg" width="108" height="108"  alt="img-5" />
+                    </li>    
+                    <li class="image-item" draggable="true">
+                        <img src="images/p12.jpeg" width="108" height="108"  alt="img-1" />  
+                    </li>
+                    <li class="image-item" draggable="true">
+                        <img src="images/p13.jpeg" width="108" height="108"  alt="img-2" />
+                    </li>   
+                   
+                    <li class="image-item" draggable="true">
+                        <img src="images/p14.jpeg" width="108" height="108"  alt="img-3" />
+                     </li>   
+                    <li class="image-item" draggable="true">
+                        <img src="images/p15.jpeg" width="108" height="108"  alt="img-4" />
+                     </li>   
+                  
+                    <li class="image-item" draggable="true">
+                        <img src="images/p16.jpeg" width="108" height="108"  alt="img-5" />
+                        </li>    
+                        <li class="image-item" draggable="true">
+                            <img src="images/p17.jpg" width="108" height="108" alt="img-5" />
+                            </li>    
+                            <li class="image-item" draggable="true">
+                                <img src="images/p19.jpeg"  width="108" height="108"  alt="img-1" />  
+                            </li>
+                            <li class="image-item" draggable="true">
+                                <img src="images/p20.jpeg" width="108" height="108"  alt="img-2" />
+                            </li>   
+                           
+                            <li class="image-item" draggable="true">
+                                <img src="images/p21.jpeg" width="108" height="108"  alt="img-3" />
+                             </li>   
+                            <li class="image-item" draggable="true">
+                                <img src="images/p22.jpeg" width="108" height="108"  alt="img-4" />
+                             </li>   
+                          
+                            <li class="image-item" draggable="true">
+                                <img src="images/p23.jpeg" width="108" height="108"  alt="img-5" />
+                                </li> 
+                                <li class="image-item" draggable="true">
+                                    <img src="images/p24.jpeg" width="108" height="108"  alt="img-3" />
+                                 </li>   
+                                <li class="image-item" draggable="true">
+                                    <img src="images/p25.jpeg" width="108" height="108"  alt="img-4" />
+                                 </li>  
+                                 <li class="image-item" draggable="true">
+                                    <img src="images/p26.jpeg" width="108" height="108"  alt="img-5" />
+                                    </li>      
+                                    <li class="image-item" draggable="true">
+                                        <img src="images/p27.jpeg" width="108" height="108"  alt="img-5" />
+                                        </li> 
+                                        <li class="image-item" draggable="true">
+                                            <img src="images/p28.jpeg" width="108" height="108"  alt="img-3" />
+                                         </li>   
+                                        <li class="image-item" draggable="true">
+                                            <img src="images/p29.jpeg" width="108" height="108"  alt="img-4" />
+                                         </li>   
+                                      
+                                        <li class="image-item" draggable="true">
+                                            <img src="images/vj7.jpeg" width="108" height="108"  alt="img-5" />
+                                            </li> 
+                              
+                                <li class="image-item" draggable="true">
+                                    <img src="images/alb30.jpeg" width="108" height="108"  alt="img-5" />
+                                    </li>         
+                                    <li class="image-item" draggable="true">
+                                        <img src="images/alb31.jpeg" width="108" height="108"  alt="img-3" />
+                                     </li>   
+                                    <li class="image-item" draggable="true">
+                                        <img src="images/alb32.jpeg" width="108" height="108"  alt="img-4" />
+                                     </li>   
+                                  
+                                    <li class="image-item" draggable="true">
+                                        <img src="images/alb33.jpeg" width="108" height="108"  alt="img-5" />
+                                        </li> 
+                                        <li class="image-item" draggable="true">
+                                            <img src="images/alb34.jpeg" width="108" height="108"  alt="img-3" />
+                                         </li>   
+                                        <li class="image-item" draggable="true">
+                                            <img src="images/alb35.jpeg" width="108" height="108"  alt="img-4" />
+                                         </li>   
+                                      
+                                        <li class="image-item" draggable="true">
+                                            <img src="images/alb36.jpeg" width="108" height="108"  alt="img-5" />
+                                            </li>      
+                                            <li class="image-item" draggable="true">
+                                                <img src="images/alb37.jpeg" width="108" height="108"  alt="img-5" />
+                                                </li> 
+                                                <li class="image-item" draggable="true">
+                                                    <img src="images/alb38.jpeg" width="108" height="108"  alt="img-3" />
+                                                 </li>   
+                                                <li class="image-item" draggable="true">
+                                                    <img src="images/alb39.jpeg" width="108" height="108"  alt="img-4" />
+                                                 </li>   
+                                              
+                                                <li class="image-item" draggable="true">
+                                                    <img src="images/alb9.jpeg" width="108" height="108"  alt="img-5" />
+                                                    </li>                
+        </ul>
+    </section>
+    <section id="albums">
+        <h2>Recent albums</h2>
+        <ul class="image-list">
+            <li class="image-item" draggable="true">
+                <img src="images/alb5.jpeg"  width="108" height="108" alt="img-1" />  
+            </li>
+            <li class="image-item" draggable="true">
+                <img src="images/allu.jpeg" width="108" height="108"  alt="img-2" />
+            </li>   
+           
+            <li class="image-item" draggable="true">
+                <img src="images/vj.jpeg" width="108" height="108"  alt="img-3" />
+             </li>   
+            <li class="image-item" draggable="true">
+                <img src="images/alb8.jpeg" width="108" height="108"  alt="img-4" />
+             </li>   
+          
+            <li class="image-item" draggable="true">
+                <img src="images/alb40.jpeg" width="108" height="108"  alt="img-5" />
+                </li>
+                <li class="image-item" draggable="true">
+                    <img src="images/alb10.jpeg" width="108" height="108"  alt="img-1" />  
+                </li>
+                <li class="image-item" draggable="true">
+                    <img src="images/alb11.jpeg" width="108" height="108"  alt="img-2" />
+                </li>   
+               
+                <li class="image-item" draggable="true">
+                    <img src="images/lb12.jpeg" width="108" height="108"  alt="img-3" />
+                 </li>   
+                <li class="image-item" draggable="true">
+                    <img src="images/lb13.jpeg" width="108" height="108"  alt="img-4" />
+                 </li>   
+              
+                <li class="image-item" draggable="true">
+                    <img src="images/lb14.jpeg" width="108" height="108"  alt="img-5" />
+                    </li>    
+                    <li class="image-item" draggable="true">
+                        <img src="images/alb15.jpeg" width="108" height="108"  alt="img-1" />  
+                    </li>
+                    <li class="image-item" draggable="true">
+                        <img src="images/alb16.jpeg" width="108" height="108"  alt="img-2" />
+                    </li>   
+                   
+                    <li class="image-item" draggable="true">
+                        <img src="images/alb17.jpeg" width="108" height="108"  alt="img-3" />
+                     </li>   
+                    <li class="image-item" draggable="true">
+                        <img src="images/alb19.jpeg" width="108" height="108"  alt="img-4" />
+                     </li>   
+                  
+                    <li class="image-item" draggable="true">
+                        <img src="images/alb20.jpeg" width="108" height="108"  alt="img-5" />
+                        </li>    
+                        <li class="image-item" draggable="true">
+                            <img src="images/alb21.jpeg" width="108" height="108" alt="img-5" />
+                            </li>    
+                            <li class="image-item" draggable="true">
+                                <img src="images/alb22.jpeg"  width="108" height="108"  alt="img-1" />  
+                            </li>
+                            <li class="image-item" draggable="true">
+                                <img src="images/alb23.jpeg" width="108" height="108"  alt="img-2" />
+                            </li>   
+                           
+                            <li class="image-item" draggable="true">
+                                <img src="images/alb24.jpeg" width="108" height="108"  alt="img-3" />
+                             </li>   
+                            <li class="image-item" draggable="true">
+                                <img src="images/alb25.jpeg" width="108" height="108"  alt="img-4" />
+                             </li>   
+                          
+                            <li class="image-item" draggable="true">
+                                <img src="images/alb27.jpeg" width="108" height="108"  alt="img-5" />
+                                </li> 
+                                <li class="image-item" draggable="true">
+                                    <img src="images/alb28.jpeg" width="108" height="108"  alt="img-3" />
+                                 </li>   
+                                <li class="image-item" draggable="true">
+                                    <img src="images/alb29.jpeg" width="108" height="108"  alt="img-4" />
+                                 </li>  
+                                 <li class="image-item" draggable="true">
+                                    <img src="images/vj 2.jpeg" width="108" height="108"  alt="img-5" />
+                                    </li>      
+                                    <li class="image-item" draggable="true">
+                                        <img src="images/vj3.jpeg" width="108" height="108"  alt="img-5" />
+                                        </li> 
+                                        <li class="image-item" draggable="true">
+                                            <img src="images/vj4.jpeg" width="108" height="108"  alt="img-3" />
+                                         </li>   
+                                        <li class="image-item" draggable="true">
+                                            <img src="images/vj5.jpeg" width="108" height="108"  alt="img-4" />
+                                         </li>   
+                                      
+                                        <li class="image-item" draggable="true">
+                                            <img src="images/vj7.jpeg" width="108" height="108"  alt="img-5" />
+                                            </li> 
+                              
+                                <li class="image-item" draggable="true">
+                                    <img src="images/alb30.jpeg" width="108" height="108"  alt="img-5" />
+                                    </li>         
+                                    <li class="image-item" draggable="true">
+                                        <img src="images/alb31.jpeg" width="108" height="108"  alt="img-3" />
+                                     </li>   
+                                    <li class="image-item" draggable="true">
+                                        <img src="images/alb32.jpeg" width="108" height="108"  alt="img-4" />
+                                     </li>   
+                                  
+                                    <li class="image-item" draggable="true">
+                                        <img src="images/alb33.jpeg" width="108" height="108"  alt="img-5" />
+                                        </li> 
+                                        <li class="image-item" draggable="true">
+                                            <img src="images/alb34.jpeg" width="108" height="108"  alt="img-3" />
+                                         </li>   
+                                        <li class="image-item" draggable="true">
+                                            <img src="images/alb35.jpeg" width="108" height="108"  alt="img-4" />
+                                         </li>   
+                                      
+                                        <li class="image-item" draggable="true">
+                                            <img src="images/alb36.jpeg" width="108" height="108"  alt="img-5" />
+                                            </li>      
+                                            <li class="image-item" draggable="true">
+                                                <img src="images/alb37.jpeg" width="108" height="108"  alt="img-5" />
+                                                </li> 
+                                                <li class="image-item" draggable="true">
+                                                    <img src="images/alb38.jpeg" width="108" height="108"  alt="img-3" />
+                                                 </li>   
+                                                <li class="image-item" draggable="true">
+                                                    <img src="images/alb39.jpeg" width="108" height="108"  alt="img-4" />
+                                                 </li>   
+                                              
+                                                <li class="image-item" draggable="true">
+                                                    <img src="images/alb9.jpeg" width="108" height="108"  alt="img-5" />
+                                                    </li>                
+        </ul>
+    </section>
+    <section id="artists">
+        <h2>Artists</h2>
+        <ul class="image-list">
+            <li class="image-item" draggable="true">
+                <img src="images/arrah1.jpeg"width="108" height="108"  alt="img-1" />
+                <p>A.R.Rahman</p>
+            </li>
+            <li class="image-item" draggable="true">
+                <img src="images/ilai2.jpeg" width="108" height="108"  alt="img-2" />
+                <p>Ilayaraja</p>
+            </li>
+            <li class="image-item" draggable="true">
+                <img src="images/sid3.jpeg" width="108" height="108"  alt="img-3" />
+                <p>Sid sriram</p>
+            </li>
+            <li class="image-item" draggable="true">
+                <img src="images/sherya4.jpeg" width="108" height="108"  alt="img-4" />
+                <p>Shreya Ghosal</p>
+            </li>
+            <li class="image-item" draggable="true">
+                <img src="images/kar5.jpeg" width="108" height="108"  alt="img-5" />
+                <p>Karthick</p>
+            </li>
+            <li class="image-item" draggable="true">
+                <img src="images/art1.jpeg"width="108" height="108"  alt="img-1" />
+                <p>Janaki</p>
+            </li>
+            <li class="image-item" draggable="true">
+                <img src="images/art2.jpeg" width="108" height="108"  alt="img-2" />
+                <p>SPB</p>
+            </li>
+            <li class="image-item" draggable="true">
+                <img src="images/art3.jpeg" width="108" height="108"  alt="img-3" />
+                <p>Harikaran</p>
+            </li>
+            <li class="image-item" draggable="true">
+                <img src="images/art4.jpeg" width="108" height="108"  alt="img-4" />
+                <p>Chithra</p>
+            </li>
+            <li class="image-item" draggable="true">
+                <img src="images/art5.jpeg" width="108" height="108"  alt="img-5" />
+                <p>Rihana</p>
+                <li class="image-item" draggable="true">
+                    <img src="images/art6.jpeg"width="108" height="108"  alt="img-1" />
+                    <p>Anirudth</p>
+                </li>
+                <li class="image-item" draggable="true">
+                    <img src="images/art7.jpeg" width="108" height="108"  alt="img-2" />
+                    <p>sangeetha</p>
+                </li>
+                <li class="image-item" draggable="true">
+                    <img src="images/art8.jpeg" width="108" height="108"  alt="img-3" />
+                    <p>Vijay</p>
+                </li>
+                <li class="image-item" draggable="true">
+                    <img src="images/art9.jpeg" width="108" height="108"  alt="img-4" />
+                    <p>Dhanush</p>
+                </li>
+                <li class="image-item" draggable="true">
+                    <img src="images/art10.jpeg" width="108" height="108"  alt="img-5" />
+                    <p>Suchitra</p>
+                </li>
+                <li class="image-item" draggable="true">
+                    <img src="images/art16.jpeg"width="108" height="108"  alt="img-1" />
+                    <p>Sruthi Hassan</p>
+                </li>
+                <li class="image-item" draggable="true">
+                    <img src="images/art12.jpeg" width="108" height="108"  alt="img-2" />
+                    <p>Unni krishan</p>
+                </li>
+                <li class="image-item" draggable="true">
+                    <img src="images/art13.jpeg" width="108" height="108"  alt="img-3" />
+                    <p>Harichandran</p>
+                </li>
+                <li class="image-item" draggable="true">
+                    <img src="images/art14.jpeg" width="108" height="108"  alt="img-4" />
+                    <p>Girija Devi</p>
+                </li>
+                <li class="image-item" draggable="true">
+                    <img src="images/art15.jpeg" width="108" height="108"  alt="img-5" />
+                    <p>Saindhavi</p>
+                </li>
+        </ul>
+    </section>
+    <section id="Actors Hits">
+        <h2>Actors Hits</h2>
+        <ul class="image-list">
+            
+            <li class="image-item" draggable="true">
+                <img src="images/ac2.jpeg" width="108" height="108"  alt="img-2" />
+            </li>
+            <li class="image-item" draggable="true">
+                <img src="images/ac3.jpeg" width="108" height="108"  alt="img-3" />
+            </li>
+            <li class="image-item" draggable="true">
+                <img src="images/ac4.jpeg" width="108" height="108"  alt="img-4" />
+            </li>
+            <li class="image-item" draggable="true">
+                <img src="images/ac5.jpeg" width="108" height="108"  alt="img-5" />
+            </li>
+            <li class="image-item" draggable="true">
+                <img src="images/ac6.jpeg"width="108" height="108"  alt="img-1" />
+            </li>
+            <li class="image-item" draggable="true">
+                <img src="images/ac7.jpeg" width="108" height="108"  alt="img-2" />
+            </li>
+            <li class="image-item" draggable="true">
+                <img src="images/ac8.jpeg" width="108" height="108"  alt="img-3" />
+            </li>
+            <li class="image-item" draggable="true">
+                <img src="images/ac9.jpeg" width="108" height="108"  alt="img-4" />
+            </li>
+            <li class="image-item" draggable="true">
+                <img src="images/ac20.jpeg" width="108" height="108"  alt="img-5" />
+            <li class="image-item" draggable="true">
+                <img src="images/ac10.jpeg"width="108" height="108"  alt="img-1" />
+            </li>
+            <li class="image-item" draggable="true">
+                <img src="images/ac21.jpeg" width="108" height="108"  alt="img-2" />
+            </li>
+            <li class="image-item" draggable="true">
+                <img src="images/ac11.jpeg" width="108" height="108"  alt="img-3" />
+                </li>
+                <li class="image-item" draggable="true">
+                    <img src="images/ac22.jpeg" width="108" height="108"  alt="img-4" />
+                </li>
+                <li class="image-item" draggable="true">
+                    <img src="images/ac12.jpeg" width="108" height="108"  alt="img-5" />
+                </li>
+                <li class="image-item" draggable="true">
+                    <img src="images/ac23.jpeg"width="108" height="108"  alt="img-1" />
+                </li>
+                <li class="image-item" draggable="true">
+                    <img src="images/ac13.jpeg" width="108" height="108"  alt="img-2" />
+                </li>
+                <li class="image-item" draggable="true">
+                    <img src="images/ac25.jpeg" width="108" height="108"  alt="img-3" />
+                </li>
+                <li class="image-item" draggable="true">
+                    <img src="images/ac14.jpeg" width="108" height="108"  alt="img-4" />
+                </li>
+                <li class="image-item" draggable="true">
+                    <img src="images/ac15.jpeg" width="108" height="108"  alt="img-5" />
+                </li>
+                <li class="image-item" draggable="true">
+                    <img src="images/ac16.jpeg"width="108" height="108"  alt="img-1" />
+                </li>
+                <li class="image-item" draggable="true">
+                    <img src="images/ac17.jpeg" width="108" height="108"  alt="img-2" />
+                </li>
+                <li class="image-item" draggable="true">
+                    <img src="images/ac18.jpeg" width="108" height="108"  alt="img-3" />
+                </li>
+                <li class="image-item" draggable="true">
+                    <img src="images/ac19.jpeg" width="108" height="108"  alt="img-4" />
+                </li>
+                <li class="image-item" draggable="true">
+                    <img src="images/ac31.jpeg" width="108" height="108"  alt="img-5" />
+                </li>
+                <li class="image-item" draggable="true">
+                    <img src="images/ac46.jpeg"width="108" height="108"  alt="img-1" />
+                </li>
+                <li class="image-item" draggable="true">
+                    <img src="images/ac28.jpeg" width="108" height="108"  alt="img-2" />
+                </li>
+                <li class="image-item" draggable="true">
+                    <img src="images/ac23.jpeg" width="108" height="108"  alt="img-3" />
+                </li>
+                <li class="image-item" draggable="true">
+                    <img src="images/ac27.jpeg" width="108" height="108"  alt="img-4" />
+                </li>
+                <li class="image-item" draggable="true">
+                    <img src="images/ac29.jpeg" width="108" height="108"  alt="img-5" />
+                    <li class="image-item" draggable="true">
+                        <img src="images/ac26.jpeg"width="108" height="108"  alt="img-1" />
+                    </li>
+                    <li class="image-item" draggable="true">
+                        <img src="images/ac33.jpeg"width="108" height="108"  alt="img-1" />
+                    </li>
+                    <li class="image-item" draggable="true">
+                        <img src="images/ac34.jpeg" width="108" height="108"  alt="img-2" />
+                    </li>
+                    <li class="image-item" draggable="true">
+                        <img src="images/acc35.jpeg" width="108" height="108"  alt="img-3" />
+                    </li>
+                    <li class="image-item" draggable="true">
+                        <img src="images/ac36.jpeg" width="108" height="108"  alt="img-4" />
+                    </li>
+                    <li class="image-item" draggable="true">
+                        <img src="images/ac37.jpeg" width="108" height="108"  alt="img-5" />
+                    </li>
+                    <li class="image-item" draggable="true">
+                        <img src="images/ac38.jpeg"width="108" height="108"  alt="img-1" />
+                    </li>
+                    <li class="image-item" draggable="true">
+                        <img src="images/ac39.jpeg" width="108" height="108"  alt="img-2" />
+                    </li>
+                    <li class="image-item" draggable="true">
+                        <img src="images/ac40.jpeg" width="108" height="108"  alt="img-3" />
+                    </li>
+                    <li class="image-item" draggable="true">
+                        <img src="images/ac41.jpeg" width="108" height="108"  alt="img-4" />
+                    </li>
+                    <li class="image-item" draggable="true">
+                        <img src="images/ac42.jpeg" width="108" height="108"  alt="img-5" />
+                        <li class="image-item" draggable="true">
+                            <img src="images/ac43.jpeg"width="108" height="108"  alt="img-1" />
+                        </li>
+    
+        </ul>
+    </section>
+    <footer>
+        <p>&copy; 2024 Music World. All rights reserved.</p>
+    </footer>
+    <script>
+        document.querySelector('.contact-icon').addEventListener('click', function() {
+            var userDetails = document.getElementById('user-details');
+            if (userDetails.style.display === 'none' || userDetails.style.display === '') {
+                userDetails.style.display = 'block';
+            } else {
+                userDetails.style.display = 'none';
+            }
+        });
+    </script>
+    <script src="script.js"></script>
+</body>
+</html>
