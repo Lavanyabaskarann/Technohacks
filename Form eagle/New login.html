@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form id="formsjs">
+        <label for="">name:</label>
+        <input type="text"id="namejs"required placeholder="enter your name">
+        <br>
+        <br>
+        <button type="submit">SUBMIT</button>
+        <div id="messagejs"></div>
+        </form>
+
+<script>
+    document.getElementById("formjs").addEventListener("submit",function(event){
+event.preventDefault();
+var name=document.getElementById("namejs").value;
+var message="hello!"+name;
+document.getElementById("messagejs").innerText=message;
+document.getElementById("namejs").value="";
+    });
+</script>
+</body>
+</html>
